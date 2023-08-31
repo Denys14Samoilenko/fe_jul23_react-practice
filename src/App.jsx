@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.scss';
-import cn from 'classnames';
+// import cn from 'classnames';
 
 import usersFromServer from './api/users';
 import categoriesFromServer from './api/categories';
@@ -22,8 +22,6 @@ const products = productsFromServer.map((product) => {
   };
 });
 
-console.log(products);
-
 function getFilteredProductsByName(array, query) {
   return array.filter((product) => {
     const preparedQuery = query.toLowerCase().trim();
@@ -39,7 +37,7 @@ export const App = () => {
 
   const handleResetAllFilters = () => (
     setQuery('')
-  )
+  );
 
   const visibleProducts = getFilteredProductsByName(products, query);
 
